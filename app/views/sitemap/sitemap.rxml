@@ -1,0 +1,49 @@
+xml.instruct!
+xml.urlset "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
+  
+  if (request.port == 80)
+    base_location = request.protocol + request.host
+  else
+    base_location = request.protocol + request.host + ":" + request.port.to_s
+  end
+  
+  xml.url do
+    xml.loc base_location + "/"
+    xml.lastmod Sentence.find(:first, :order => "id desc").created_at.utc.xmlschema
+  end
+  
+  xml.url do
+    xml.loc base_location + "/user"
+    xml.lastmod Time.now.utc.xmlschema
+  end
+  
+  xml.url do
+    xml.loc base_location + "/about"
+    xml.lastmod File.mtime(File.dirname(__FILE__) + '/../tiikitter/about.html.erb').utc.xmlschema
+  end
+  
+  Sentence.find(:all).each{|s|
+    xml.url do
+      xml.loc base_location + "/show/#{s.text}"
+      xml.lastmod s.created_at.utc.xmlschema
+    end
+  }
+  
+  user_screen_names = Timeline.find(:all, :conditions => "user_screen_name IS NOT NULL", :select => "distinct user_screen_name").collect{|t| 
+    t.user_screen_name
+  }.each{|name|
+    xml.url do
+      xml.loc base_location + "/user/#{name}"
+    end
+  }
+  
+  from = Timeline.find(:first, :order => "id").time_line_created_at.to_date
+  to   = Date.today.to_time.to_date
+   (from..to).each{|date|
+    xml.url do
+      xml.loc base_location + "/date/#{date.strftime("%Y-%m-%d")}"
+      xml.lastmod date
+    end
+  }
+  
+end

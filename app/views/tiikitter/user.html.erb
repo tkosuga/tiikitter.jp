@@ -1,0 +1,33 @@
+<%= render :partial => "parts/head", :locals => {
+ :page_title => "#{h @screen_name} | tiikitter ",
+ :keywords   => "#{h @screen_name}",
+}
+%>
+<body>
+  
+  <%= javascript_include_tag "jquery-1.3.2.min" %> 
+  <%= javascript_include_tag "jquery.highlight-3" %> 
+
+  <div id="main">
+    
+    <%= render :partial => "parts/header" %>
+
+    <div class="breadcrumb">
+      <a href="/">HOME</a><span><%=h @screen_name %></span>
+    </div>
+    
+    <div id="content">
+
+        <h3><%=h @screen_name %>さんの地域に関する発言</h3>
+
+        <ul id="timelines" class="timeline">
+        <% @timelines.each{|timeline| %>
+          <%= render :partial => "parts/tweet", :locals => {:timeline => timeline} %>
+        <% } %>
+        </ul>
+    </div>
+    <%= render :partial => "parts/footer" %>
+  </div>
+
+</body>
+

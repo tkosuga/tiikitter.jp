@@ -1,0 +1,75 @@
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix { /* for IE */
+  display: inline-block;
+}
+
+
+/*Credits: Dynamic Drive CSS Library */
+/*URL: http://www.dynamicdrive.com/style/ */
+
+.underlinemenu {
+  font-weight: bold;
+  width: 100%;
+  border-bottom: 4px solid #3274D0;
+}
+
+.underlinemenu ul {
+  padding: 6px 0 0 0;
+  margin: 0;
+  text-align: right;
+}
+
+.underlinemenu ul li {
+  display: inline;
+  background-color: #3274D0;
+}
+
+.underlinemenu ul li a {
+  padding: 4px 8px 4px 8px;
+  margin-right: 8px;
+  text-decoration: none;
+  color: #FFFFFF;
+  background-color: #3274D0;
+  display: block;
+  float: left;
+}
+
+.underlinemenu ul li a:hover, .underlinemenu ul li a.selected{
+  background-color: #232323;
+}
+
+
+
+/*Credits: Dynamic Drive CSS Library */
+/*URL: http://www.dynamicdrive.com/style/ */
+
+.breadcrumb {
+  padding: 12px 0 12px 0;
+  text-align: right;
+}
+
+.breadcrumb a {
+  background: transparent url(/images/breadcrumb.gif) no-repeat center right;
+  text-decoration: none;
+  padding-right: 18px; /*adjust bullet image padding*/
+  color: navy;
+}
+
+.breadcrumb a:visited, .breadcrumb a:active {
+  color: navy;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  padding-left:5px;
+}

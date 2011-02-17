@@ -1,0 +1,17 @@
+<li>
+  <span class="thumb">
+    <% unless (timeline.profile_image_uri.blank? || timeline.user_screen_name.blank?) %> 
+      <%= link_to(image_tag(timeline.profile_image_uri, :width => 48, :height => 48), "http://www.twitter.com/" + timeline.user_screen_name) %>
+      <%= link_to(image_tag("follow_me.png", :width => 48, :height => 13), "http://www.twitter.com/" + timeline.user_screen_name) %>
+    <% end %>
+  </span>
+  <span class="entry-body">
+    <strong>
+      <% unless (timeline.user_name.blank? || timeline.user_screen_name.blank?) %> 
+        <%= link_to(timeline.user_name, "/user/" + timeline.user_screen_name) %>
+      <% end %>
+    </strong>
+    <%= states_linked_text timeline %>
+  </span>
+  <span class="entry-meta"><%= link_to(timeline.time_line_created_at, "/date/#{timeline.time_line_created_at.to_date.strftime("%Y-%m-%d")}") %></span>
+</li>

@@ -1,0 +1,46 @@
+<%= render :partial => "parts/head", :locals => {
+ :page_title => "tiikitter | 都道府県の今を切り取ったー",
+ :keywords   => "都道府県, twitter, buzz",
+ :description => "twitterで話題に上がる都道府県をリアルタイムに見ることができます。地域のトレンドを知りたい、地域で何が流行ってるかを友達に紹介したい、ぜひぜひお使い下さい。"
+}
+%>
+<body onunload="GUnload();">
+  <div id="main">
+    <%= render :partial => "parts/header" %>
+    <div id="content">
+
+        <h3>ツイートの多い地域のヒートマップ</h3>
+        <p>1時間置きにツイートの多い地域情報のヒートマップを更新しています。最終更新日は<%= File.mtime("./public/images/heatmaps/popular.png") %>。</p>
+        <%= render :partial => "parts/google_map_box" %>
+
+        <h3>都道府県別発言集計</h3>
+        <p>47都道府県についてツイートされた発言を過去60日分集計しています。</p>
+        <%= render :partial => "parts/prefectures_box" %>
+
+        <h3>最新の地域に関係する発言</h3>
+
+        <div class="clearfix">
+          <ul id="timelines" class="timeline">
+            <% Timeline.recents.each{|timeline| %>
+              <%= render :partial => "parts/tweet", :locals => {:timeline => timeline} %>
+            <% } %>
+          </ul>
+        </div>
+
+        <h3>流行の地域情報はあなたの発言から作られます。</h3>
+        <p>参加するには次の2つのうちどちらか該当するアカウントをフォローして下さい。<%= link_to "詳しい説明は参加方法をご確認下さい", "about#rule" %>。</p>
+        <%= render :partial => "parts/invitation_box" %>
+
+        <h3>流行の地域一覧</h3>
+        <%= item_cloud(@items, @total_count) %>
+
+    </div>
+    <script type="text/javascript">
+    //<![CDATA[
+      var maps = new GoogleMap();
+      maps.loadMap('/images/heatmaps/popular.png');
+    //]]>
+    </script>
+    <%= render :partial => "parts/footer" %>
+  </div>
+</body>

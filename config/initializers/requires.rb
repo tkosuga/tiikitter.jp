@@ -1,0 +1,7 @@
+require 'pp'
+require 'hpricot'
+require 'httpclient'
+require 'MeCab'
+require 'twitter'
+require 'array_ext'
+require 'hash_ext'

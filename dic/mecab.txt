@@ -1,0 +1,47 @@
+################################
+
+辞書登録方法の説明
+
+################################
+
+
+http://mecab.sourceforge.net/dic.html
+
+################################
+
+centosでの辞書登録方法
+
+################################
+
+1. まずdicフォルダに移動します。
+2. location.csvを辞書に変換します
+
+/usr/local/libexec/mecab/mecab-dict-index -d/usr/local/lib/mecab/dic/ipadic -u location.dic -f utf8 -t utf8 location.csv
+
+3.dicrcにlocation.dicを追加します。
+
+vi /usr/local/lib/mecab/dic/ipadic/dicrc
+
+末尾に追加。
+
+userdic = /var/www/tiikitter/dic/location.dic
+
+
+################################
+
+ubuntuでの辞書登録方法
+
+################################
+
+1. まずdicフォルダに移動します。
+2. location.csvを辞書に変換します
+
+/usr/lib/mecab/mecab-dict-index -d/usr/share/mecab/dic/ipadic -u location.dic -f utf8 -t utf8 location.csv
+
+3.dicrcにlocation.dicを追加します。
+
+vi /usr/share/mecab/dic/ipadic/dicrc
+
+末尾に追加。
+
+userdic = /mnt/hgfs/win/tiikitter/dic/location.dic

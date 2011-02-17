@@ -1,0 +1,213 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  font-size: 15px;
+  color: #333333;
+}
+
+p {
+  margin: 6px 0 6px 0;
+  line-height: 28px;
+  width: 100%;
+}
+
+h1, h2, h3{
+  margin: 0px;
+  font-weight: bold;
+}
+
+img{
+  border: 0px;
+}
+
+
+h3 {
+  background:none repeat scroll 0 0 transparent;
+  border-bottom:2px dotted #E9E9E9;
+  color:#1259C7;
+  margin: 12px 0 6px;
+  padding-bottom: 3px; 
+  font-weight: normal;
+  font-size: 16px;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: #393997;
+}
+
+/*
+ * ヘッダー部分
+ */
+.logo {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.logo div.title {
+  width: 360px;  
+  float:left;
+}
+
+.logo div.title h1 {
+  background: url("/images/earth.png") no-repeat scroll left top transparent;
+  height: 72px;
+}
+
+.logo div.title h1 a, 
+.logo div.title h1 span {
+  display: block;
+  padding-top: 4px;
+  padding-left: 80px;
+}
+
+.logo div.title h1 a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 20px;
+}
+
+.logo div.title h1 span {
+  text-decoration: none;
+  color: #A8A8A8;
+  font-size: 16px;
+}
+
+.logo div.join_us_description {
+  float: right;
+  width: 220px; 
+  font-size: 12px;
+}
+
+.logo div.join_us_buttons {
+  float: right;
+  width: 140px;  
+}
+
+/* unordered list */
+ul {
+  margin: 8px 0px 0px 14px;
+  padding: 0px;
+  list-style-image:none;
+  list-style-position:outside;
+  list-style-type:none;  
+}
+
+ul.timeline li {
+  height: 57px;
+  border-bottom: 1px dashed #D2DADA;
+  line-height: 1.1em;
+  padding: 0.7em 0 0.6em;
+  clear: both;
+}
+
+ul.timeline li span.thumb {
+  display:block;
+  height:50px;
+  left:0;
+  margin:0 10px 0 0;
+  width: 50px;
+  float: left;
+}
+
+ul.timeline li span.entry-body {
+  display: block;
+  width: 600px;
+  float: left;
+}
+
+ul.timeline li span.entry-body a {
+  border-bottom: 1px dotted #191967;
+}
+
+ul.timeline li span.entry-meta {
+  color: #999999;
+  display: block;
+  font-size: 0.764em;
+  margin: 6px 0 0;
+  float: left;
+}
+
+ul.timeline li span.entry-meta a {
+  color: #999999 !important;
+  text-decoration: none;
+}
+
+
+/* main container */
+#main
+{ width: 761px;
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+/* main content */
+#content {
+  width: 761px;
+  height: auto;
+  padding: 0px;
+  overflow: hidden;
+} 
+
+/*
+ * footer
+ */
+#footer {
+  width: 761px;
+  text-align: center;
+  margin-top: 40px;
+  padding: 3px 0px 3px 0px;
+  background-color:#999999;
+}
+
+div.map {
+  width:　700px;
+  height: 400px;
+  margin: 5px auto;
+  border: 1px dotted gray;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+/*--------------------------------------
+	Tag Cloud
+---------------------------------------*/
+
+ul.tagCloud {
+  padding-top: 4px;
+	line-height: 28px;
+}
+
+ul.tagCloud li {
+	display: inline;
+  padding-right: 6px;
+}
+
+ul.tagCloud li a {
+  text-decoration: none;
+}
+
+/*
+ * 
+ * 
+ * 
+ */
+span.anchor {
+  background-color: #F2F2F2;
+  padding:4px 5px;
+}
+
+span.anchor a {
+  color:#333333;
+}
+
+span.count {
+  background-color: #0000FF;
+  color:#FFFFFF;
+  font-weight:bold;
+  padding:4px 5px;
+}
+

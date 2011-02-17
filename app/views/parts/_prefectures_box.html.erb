@@ -1,0 +1,68 @@
+<% states = Area.japanese_states_diagnoses.to_order_sorted_array %>
+<%
+emblems = {
+'北海道' => 'Japanese_Prefectural_Emblem1.png',
+'青森' => 'Japanese_Prefectural_Emblem2.png',
+'秋田' => 'Japanese_Prefectural_Emblem5.png',
+'岩手' => 'Japanese_Prefectural_Emblem3.png',
+'山形' => 'Japanese_Prefectural_Emblem6.png',
+'宮城' => 'Japanese_Prefectural_Emblem4.png',
+'福島' => 'Japanese_Prefectural_Emblem7.png',
+'山梨' => 'Japanese_Prefectural_Emblem19.png',
+'長野' => 'Japanese_Prefectural_Emblem20.png',
+'新潟' => 'Japanese_Prefectural_Emblem15.png',
+'富山' => 'Japanese_Prefectural_Emblem16.png',
+'石川' => 'Japanese_Prefectural_Emblem17.png',
+'福井' => 'Japanese_Prefectural_Emblem18.png',
+'茨城' => 'Japanese_Prefectural_Emblem8.png',
+'栃木' => 'Japanese_Prefectural_Emblem9.png',
+'群馬' => 'Japanese_Prefectural_Emblem10.png',
+'埼玉' => 'Japanese_Prefectural_Emblem11.png',
+'千葉' => 'Japanese_Prefectural_Emblem12.png',
+'東京' => 'Japanese_Prefectural_Emblem13.png',
+'神奈川' => 'Japanese_Prefectural_Emblem14.png',
+'愛知' => 'Japanese_Prefectural_Emblem23.png',
+'静岡' => 'Japanese_Prefectural_Emblem22.png',
+'岐阜' => 'Japanese_Prefectural_Emblem21.png',
+'三重' => 'Japanese_Prefectural_Emblem24.png',
+'大阪' => 'Japanese_Prefectural_Emblem27.png',
+'兵庫' => 'Japanese_Prefectural_Emblem28.png',
+'京都' => 'Japanese_Prefectural_Emblem26.png',
+'滋賀' => 'Japanese_Prefectural_Emblem25.png',
+'奈良' => 'Japanese_Prefectural_Emblem29.png',
+'和歌山' => 'Japanese_Prefectural_Emblem30.png',
+'岡山' => 'Japanese_Prefectural_Emblem33.png',
+'広島' => 'Japanese_Prefectural_Emblem34.png',
+'鳥取' => 'Japanese_Prefectural_Emblem31.png',
+'島根' => 'Japanese_Prefectural_Emblem32.png',
+'山口' => 'Japanese_Prefectural_Emblem35.png',
+'徳島' => 'Japanese_Prefectural_Emblem36.png',
+'香川' => 'Japanese_Prefectural_Emblem37.png',
+'愛媛' => 'Japanese_Prefectural_Emblem38.png',
+'高知' => 'Japanese_Prefectural_Emblem39.png',
+'福岡' => 'Japanese_Prefectural_Emblem40.png',
+'佐賀' => 'Japanese_Prefectural_Emblem41.png',
+'長崎' => 'Japanese_Prefectural_Emblem42.png',
+'熊本' => 'Japanese_Prefectural_Emblem43.png',
+'大分' => 'Japanese_Prefectural_Emblem44.png',
+'宮崎' => 'Japanese_Prefectural_Emblem45.png',
+'鹿児島' => 'Japanese_Prefectural_Emblem46.png',
+'沖縄' => 'Japanese_Prefectural_Emblem47.png',
+}
+%>
+
+<div class="clearfix">
+  <ul class="tagCloud">
+    <% states.each do |state| %>
+    <li style="float: left;">
+      <div>
+        <%= link_to(image_tag(emblems[state[0]], :alt => state[0], :width => 152 / 2, :height => 188 / 2), "/show/" + state[0]) %>
+      </div>
+      <div>
+        <span class="anchor"><%= link_to(state[0], "/show/" + state[0]) %></span>
+        <span class="count"><%= state[1] %></span>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</div>

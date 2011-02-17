@@ -1,0 +1,15 @@
+
+ruby script/spec -c -fs --drb spec/models/timeline_spec.rb
+ruby script/spec spec/models/timeline_spec.rb
+
+#
+# twitterのAPI制限。
+#
+http://apiwiki.twitter.com/Rate-limiting
+
+
+Whitelisting
+
+Some applications find that the default limit proves insufficient. Under such circumstances, we offer whitelisting. It is possible to whitelist both accounts and IP addresses. Each whitelisted entity, whether an account or IP address, is allowed 20000 requests per hour. If you are developing an application that should be considered for whitelisting, please fill out the whitelisting request form. Our manual review process can take up to a week. If you have a whitelisting that needs to be updated through the addition or removal of IP addresses, reapply with an explanation of the change. Approval or rejection for whitelisting requests is emailed to the email address associated with the account that filed the application.
+
+	2万回/時 までは利用可能。この半分と見て、1万回なら問題なさそう。
